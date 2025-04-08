@@ -1,102 +1,124 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.A. Shopp</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #FDF6E3; /* marfim */
-            color: #2F4F4F; /* verde musgo */
-            font-family: 'Baskerville Old Face', 'Georgia', serif;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C.A. Shopp</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FDF6E3; /* marfim */
+      color: #2F4F4F; /* verde musgo */
+      font-family: 'Baskerville Old Face', 'Georgia', serif;
+      text-align: center;
+    }
 
-        header {
-            background-color: #2F4F4F;
-            color: #FDF6E3;
-            padding: 20px;
-        }
+    header {
+      background-color: #2F4F4F;
+      color: #FDF6E3;
+      padding: 20px;
+    }
 
-        nav a {
-            margin: 0 15px;
-            color: #FDF6E3;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    nav a {
+      margin: 0 15px;
+      color: #FDF6E3;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        .slogan {
-            font-size: 1.5em;
-            margin: 30px 20px;
-        }
+    .slogan {
+      font-size: 1.5em;
+      margin: 30px 20px;
+    }
 
-        .produto {
-            border: 2px solid #2F4F4F;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 400px;
-            background-color: #fff;
-            transition: 0.3s;
-        }
+    .produto {
+      border: 2px solid #2F4F4F;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 400px;
+      background-color: #fff;
+      transition: 0.3s;
+    }
 
-        .produto:hover {
-            background-color: #f0f0eb;
-        }
+    .produto:hover {
+      background-color: #f0f0eb;
+    }
 
-        section {
-            margin: 40px 20px;
-        }
+    section {
+      margin: 40px 20px;
+    }
 
-        footer {
-            background-color: #2F4F4F;
-            color: #FDF6E3;
-            padding: 10px;
-            font-size: 0.9em;
-        }
-    </style>
+    footer {
+      background-color: #2F4F4F;
+      color: #FDF6E3;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+
+    .carrinho-icon {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .carrinho-icon img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(240%) hue-rotate(32deg) brightness(95%) contrast(90%);
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>C.A. Shopp</h1>
-        <nav>
-            <a href="#">Produtos</a>
-            <a href="#">Cadastro</a>
-            <a href="#">Contato</a>
-        </nav>
-    </header>
 
-    <div class="slogan">
-        <p>Nada normal,<br>tudo necessário.</p>
-    </div>
+  <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras">
+  </a>
 
-    <div class="produto">
-        <h2>Produto 1</h2>
-        <p>Descrição do produto aqui.</p>
-    </div>
+  <header>
+    <h1>C.A. Shopp</h1>
+    <nav>
+      <a href="#">Produtos</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
 
-    <div class="produto">
-        <h2>Produto 2</h2>
-        <p>Descrição do produto aqui.</p>
-    </div>
+  <div class="slogan">
+    <p>Nada normal,<br>tudo necessário.</p>
+  </div>
 
-    <section>
-        <a href="cadastro.html">
-  <button>Cadastrar</button>
-</a>
-        <p>Em breve teremos novidades exclusivas para você.</p>
-    </section>
+  <div class="produto">
+    <h2>Produto 1</h2>
+    <p>Descrição do produto aqui.</p>
+  </div>
 
-    <section>
-        <h2>Contato</h2>
-        <p>Redes sociais e outros meios virão aqui.</p>
-    </section>
+  <div class="produto">
+    <h2>Produto 2</h2>
+    <p>Descrição do produto aqui.</p>
+  </div>
 
-    <footer>
-        <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
-    </footer>
+  <section>
+    <a href="cadastro.html">
+      <button>Cadastrar</button>
+    </a>
+    <p>Em breve teremos novidades exclusivas para você.</p>
+  </section>
+
+  <section>
+    <h2>Contato</h2>
+    <p>Redes sociais e outros meios virão aqui.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
+  </footer>
+
 </body>
 </html>
