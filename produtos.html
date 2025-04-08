@@ -1,159 +1,158 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produtos Cósmicos</title>
+  <title>Produtos</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      font-family: Baskerville old face, sans-serif;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #0B1D0B; /* Verde musgo escuro */
-      color: #FDF5E6; /* Marfim */
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin: 20px 0;
-      color: #FDF5E6;
-    }
-
-    .produto {
-      background-color: #1C3B1C;
-      border-radius: 15px;
-      margin: 20px auto;
       padding: 20px;
-      width: 80%;
-      max-width: 400px;
-      box-shadow: 0 0 10px rgba(0, 255, 100, 0.3);
+      background-color: #f9f9f9;
     }
 
-    .produto img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
 
-    .produto h2 {
+    .card {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .title {
+      font-size: 1.2rem;
       margin-top: 10px;
-    }
-
-    .produto button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      border: none;
-      background-color: #4CAF50;
-      color: white;
       font-weight: bold;
+    }
+
+    .price {
+      color: #28a745;
+      font-size: 1rem;
+      margin-top: 5px;
+    }
+
+    .btn-vermais {
+      display: block;
+      margin: 30px auto;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
       border-radius: 8px;
       cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      width: fit-content;
     }
 
-    /* Modal */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .modal-content {
-      background-color: #2A4A2A;
-      margin: 10% auto;
-      padding: 20px;
-      border-radius: 12px;
-      width: 80%;
-      max-width: 400px;
-      color: #FDF5E6;
-    }
-
-    .modal-content img {
-      width: 100px;
-      height: 100px;
-    }
-
-    .modal-content button {
-      margin: 10px 5px;
-      padding: 10px 15px;
-      background-color: #6EBF6E;
-      border: none;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .fechar {
-      float: right;
-      font-size: 1.5em;
-      cursor: pointer;
+    .btn-vermais:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
-  <h1>Produtos Cósmicos</h1>
 
-  <div class="produto">
-    <img src="https://via.placeholder.com/100" alt="Produto 1">
-    <h2>Produto 1</h2>
-    <button onclick="abrirModal('Produto 1', 'https://via.placeholder.com/100')">Ver mais</button>
-  </div>
+  <a href="#produto15" class="btn-vermais">Ver mais</a>
 
-  <div class="produto">
-    <img src="https://via.placeholder.com/100" alt="Produto 2">
-    <h2>Produto 2</h2>
-    <button onclick="abrirModal('Produto 2', 'https://via.placeholder.com/100')">Ver mais</button>
-  </div>
-
-  <!-- Modal -->
-  <div id="meuModal" class="modal">
-    <div class="modal-content">
-      <span class="fechar" onclick="fecharModal()">&times;</span>
-      <h2 id="modalTitulo">Produto</h2>
-      <img id="modalImagem" src="" alt="Imagem do Produto">
-      <div>
-        <button onclick="comprarAgora()">Comprar</button>
-        <button onclick="adicionarAoCarrinho()">Adicionar ao Carrinho</button>
-      </div>
+  <div class="container">
+    <!-- 15 produtos -->
+    <div class="card" id="produto1">
+      <img src="https://via.placeholder.com/250x200?text=Produto+1" alt="Produto 1">
+      <div class="title">Produto 1</div>
+      <div class="price">R$ 49,90</div>
+    </div>
+    <div class="card" id="produto2">
+      <img src="https://via.placeholder.com/250x200?text=Produto+2" alt="Produto 2">
+      <div class="title">Produto 2</div>
+      <div class="price">R$ 39,90</div>
+    </div>
+    <div class="card" id="produto3">
+      <img src="https://via.placeholder.com/250x200?text=Produto+3" alt="Produto 3">
+      <div class="title">Produto 3</div>
+      <div class="price">R$ 29,90</div>
+    </div>
+    <div class="card" id="produto4">
+      <img src="https://via.placeholder.com/250x200?text=Produto+4" alt="Produto 4">
+      <div class="title">Produto 4</div>
+      <div class="price">R$ 59,90</div>
+    </div>
+    <div class="card" id="produto5">
+      <img src="https://via.placeholder.com/250x200?text=Produto+5" alt="Produto 5">
+      <div class="title">Produto 5</div>
+      <div class="price">R$ 19,90</div>
+    </div>
+    <div class="card" id="produto6">
+      <img src="https://via.placeholder.com/250x200?text=Produto+6" alt="Produto 6">
+      <div class="title">Produto 6</div>
+      <div class="price">R$ 99,90</div>
+    </div>
+    <div class="card" id="produto7">
+      <img src="https://via.placeholder.com/250x200?text=Produto+7" alt="Produto 7">
+      <div class="title">Produto 7</div>
+      <div class="price">R$ 89,90</div>
+    </div>
+    <div class="card" id="produto8">
+      <img src="https://via.placeholder.com/250x200?text=Produto+8" alt="Produto 8">
+      <div class="title">Produto 8</div>
+      <div class="price">R$ 79,90</div>
+    </div>
+    <div class="card" id="produto9">
+      <img src="https://via.placeholder.com/250x200?text=Produto+9" alt="Produto 9">
+      <div class="title">Produto 9</div>
+      <div class="price">R$ 109,90</div>
+    </div>
+    <div class="card" id="produto10">
+      <img src="https://via.placeholder.com/250x200?text=Produto+10" alt="Produto 10">
+      <div class="title">Produto 10</div>
+      <div class="price">R$ 24,90</div>
+    </div>
+    <div class="card" id="produto11">
+      <img src="https://via.placeholder.com/250x200?text=Produto+11" alt="Produto 11">
+      <div class="title">Produto 11</div>
+      <div class="price">R$ 74,90</div>
+    </div>
+    <div class="card" id="produto12">
+      <img src="https://via.placeholder.com/250x200?text=Produto+12" alt="Produto 12">
+      <div class="title">Produto 12</div>
+      <div class="price">R$ 84,90</div>
+    </div>
+    <div class="card" id="produto13">
+      <img src="https://via.placeholder.com/250x200?text=Produto+13" alt="Produto 13">
+      <div class="title">Produto 13</div>
+      <div class="price">R$ 64,90</div>
+    </div>
+    <div class="card" id="produto14">
+      <img src="https://via.placeholder.com/250x200?text=Produto+14" alt="Produto 14">
+      <div class="title">Produto 14</div>
+      <div class="price">R$ 94,90</div>
+    </div>
+    <div class="card" id="produto15">
+      <img src="https://via.placeholder.com/250x200?text=Produto+15" alt="Produto 15">
+      <div class="title">Produto 15</div>
+      <div class="price">R$ 119,90</div>
     </div>
   </div>
 
-  <script>
-    const carrinho = [];
-    let modalProdutoAtual = {};
-
-    function abrirModal(titulo, imagem) {
-      document.getElementById('modalTitulo').innerText = titulo;
-      document.getElementById('modalImagem').src = imagem;
-      document.getElementById('meuModal').style.display = 'block';
-      modalProdutoAtual = { titulo, imagem };
-    }
-
-    function fecharModal() {
-      document.getElementById('meuModal').style.display = 'none';
-    }
-
-    function adicionarAoCarrinho() {
-      carrinho.push(modalProdutoAtual);
-      alert(`${modalProdutoAtual.titulo} foi adicionado ao carrinho!`);
-      console.log("Carrinho:", carrinho);
-    }
-
-    function comprarAgora() {
-      alert(`Compra iniciada para ${modalProdutoAtual.titulo}!\n(Pix ainda tá em fase cósmica...)`);
-    }
-
-    window.onclick = function(event) {
-      const modal = document.getElementById('meuModal');
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
-  </script>
 </body>
 </html>
