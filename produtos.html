@@ -1,158 +1,157 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produtos</title>
+<!DOCTYPE html><html lang="pt-br"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Baskervville', serif;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
+body {
+  background-color: #f8f4f0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
 
-    .card {
-      background: white;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
+.card:hover {
+  transform: translateY(-5px);
+}
 
-    .card img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+.card img {
+  max-width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
 
-    .title {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      font-weight: bold;
-    }
+.card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #4b3621;
+}
 
-    .price {
-      color: #28a745;
-      font-size: 1rem;
-      margin-top: 5px;
-    }
+.card p {
+  color: #6e5840;
+}
 
-    .btn-vermais {
-      display: block;
-      margin: 30px auto;
-      padding: 10px 20px;
-      font-size: 1rem;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      width: fit-content;
-    }
+.buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
-    .btn-vermais:hover {
-      background: #0056b3;
-    }
+.buttons button,
+.buttons a {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #cba46c;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.buttons button:hover,
+.buttons a:hover {
+  background-color: #b38b58;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #4b3621;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: #6e5840;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
   </style>
-</head>
-<body>
+</head><body>
+  <div class="cards-container">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x200" alt="Produto 1">
+      <h3>Produto 1</h3>
+      <p>R$ 99,99</p>
+      <div class="buttons">
+        <a href="finalizar-compra.html">Comprar</a>
+        <a href="carrinho.html">Adicionar ao Carrinho</a>
+        <button onclick="abrirModal('Produto 1', 'Descrição completa do produto 1 aqui...')">Ver mais</button>
+      </div>
+    </div>
+    <!-- Repita os cards conforme necessário -->
+  </div>  <!-- Modal -->  <div id="modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="fecharModal()">&times;</button>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDescription"></p>
+    </div>
+  </div>  <script>
+    function abrirModal(titulo, descricao) {
+      document.getElementById('modalTitle').textContent = titulo;
+      document.getElementById('modalDescription').textContent = descricao;
+      document.getElementById('modal').style.display = 'flex';
+    }
 
-  <a href="#produto15" class="btn-vermais">Ver mais</a>
-
-  <div class="container">
-    <!-- 15 produtos -->
-    <div class="card" id="produto1">
-      <img src="https://via.placeholder.com/250x200?text=Produto+1" alt="Produto 1">
-      <div class="title">Produto 1</div>
-      <div class="price">R$ 49,90</div>
-    </div>
-    <div class="card" id="produto2">
-      <img src="https://via.placeholder.com/250x200?text=Produto+2" alt="Produto 2">
-      <div class="title">Produto 2</div>
-      <div class="price">R$ 39,90</div>
-    </div>
-    <div class="card" id="produto3">
-      <img src="https://via.placeholder.com/250x200?text=Produto+3" alt="Produto 3">
-      <div class="title">Produto 3</div>
-      <div class="price">R$ 29,90</div>
-    </div>
-    <div class="card" id="produto4">
-      <img src="https://via.placeholder.com/250x200?text=Produto+4" alt="Produto 4">
-      <div class="title">Produto 4</div>
-      <div class="price">R$ 59,90</div>
-    </div>
-    <div class="card" id="produto5">
-      <img src="https://via.placeholder.com/250x200?text=Produto+5" alt="Produto 5">
-      <div class="title">Produto 5</div>
-      <div class="price">R$ 19,90</div>
-    </div>
-    <div class="card" id="produto6">
-      <img src="https://via.placeholder.com/250x200?text=Produto+6" alt="Produto 6">
-      <div class="title">Produto 6</div>
-      <div class="price">R$ 99,90</div>
-    </div>
-    <div class="card" id="produto7">
-      <img src="https://via.placeholder.com/250x200?text=Produto+7" alt="Produto 7">
-      <div class="title">Produto 7</div>
-      <div class="price">R$ 89,90</div>
-    </div>
-    <div class="card" id="produto8">
-      <img src="https://via.placeholder.com/250x200?text=Produto+8" alt="Produto 8">
-      <div class="title">Produto 8</div>
-      <div class="price">R$ 79,90</div>
-    </div>
-    <div class="card" id="produto9">
-      <img src="https://via.placeholder.com/250x200?text=Produto+9" alt="Produto 9">
-      <div class="title">Produto 9</div>
-      <div class="price">R$ 109,90</div>
-    </div>
-    <div class="card" id="produto10">
-      <img src="https://via.placeholder.com/250x200?text=Produto+10" alt="Produto 10">
-      <div class="title">Produto 10</div>
-      <div class="price">R$ 24,90</div>
-    </div>
-    <div class="card" id="produto11">
-      <img src="https://via.placeholder.com/250x200?text=Produto+11" alt="Produto 11">
-      <div class="title">Produto 11</div>
-      <div class="price">R$ 74,90</div>
-    </div>
-    <div class="card" id="produto12">
-      <img src="https://via.placeholder.com/250x200?text=Produto+12" alt="Produto 12">
-      <div class="title">Produto 12</div>
-      <div class="price">R$ 84,90</div>
-    </div>
-    <div class="card" id="produto13">
-      <img src="https://via.placeholder.com/250x200?text=Produto+13" alt="Produto 13">
-      <div class="title">Produto 13</div>
-      <div class="price">R$ 64,90</div>
-    </div>
-    <div class="card" id="produto14">
-      <img src="https://via.placeholder.com/250x200?text=Produto+14" alt="Produto 14">
-      <div class="title">Produto 14</div>
-      <div class="price">R$ 94,90</div>
-    </div>
-    <div class="card" id="produto15">
-      <img src="https://via.placeholder.com/250x200?text=Produto+15" alt="Produto 15">
-      <div class="title">Produto 15</div>
-      <div class="price">R$ 119,90</div>
-    </div>
-  </div>
-
-</body>
-</html>
+    function fecharModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script></body></html>
