@@ -200,19 +200,21 @@
     <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
   </footer>
 
-  <!-- Modal -->
-  <div id="modal-produto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999; justify-content: center; align-items: center;">
-    <div style="background-color: #FDF6E3; color: #2F4F4F; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; text-align: center; position: relative;">
-      <img id="modal-img" src="" alt="Imagem do produto" style="max-width: 100%; border-radius: 10px; margin-bottom: 10px;">
-      <h2 id="modal-titulo"></h2>
-      <p id="modal-desc"></p>
-      <div style="margin-top: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
-        <button onclick="comprarAgora()" style="background-color: #2F4F4F; color: #FDF6E3;">Comprar</button>
-        <button onclick="adicionarCarrinho(modalTitulo.innerText, modalPreco)" style="background-color: #2F4F4F; color: #FDF6E3;">Adicionar ao carrinho</button>
-      </div>
-      <button onclick="fecharModal()" style="margin-top: 20px; background: none; border: none; color: #2F4F4F; font-weight: bold; cursor: pointer;">Fechar</button>
+<!-- ESSA BAGASSA VAI SAIR HAHAHA -->
+
+<!-- Modal -->
+<div id="modal-produto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999; justify-content: center; align-items: center;">
+  <div style="background-color: #FDF6E3; color: #2F4F4F; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; text-align: center; position: relative; max-height: 90vh; overflow-y: auto;">
+    <img id="modal-img" src="" alt="Imagem do produto" style="max-width: 100%; border-radius: 10px; margin-bottom: 10px;">
+    <h2 id="modal-titulo"></h2>
+    <p id="modal-desc"></p>
+    <div style="margin-top: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
+      <button onclick="comprarAgora()" style="background-color: #2F4F4F; color: #FDF6E3;">Comprar</button>
+      <button onclick="adicionarCarrinho(modalTitulo.innerText, modalPreco)" style="background-color: #2F4F4F; color: #FDF6E3;">Adicionar ao carrinho</button>
     </div>
+    <button onclick="fecharModal()" style="margin-top: 20px; background: none; border: none; color: #2F4F4F; font-weight: bold; cursor: pointer;">Fechar</button>
   </div>
+</div>
 
   <!-- Scripts -->
   <script>
