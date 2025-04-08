@@ -172,16 +172,16 @@
 
   <div class="produto">
     <h2>Produto 1</h2>
-    <p>Descrição do produto aqui.</p>
+    <p>Descrição breve aqui.</p>
     <p>Preço: R$ 19,90</p>
-    <button onclick="adicionarCarrinho('Produto 1', 19.90)">Adicionar ao carrinho</button>
+    <button onclick="abrirModal('Produto 1', 'Descrição completa do Produto 1.', 'produto1.jpg', 19.90)">Ver mais</button>
   </div>
 
   <div class="produto">
     <h2>Produto 2</h2>
-    <p>Descrição do produto aqui.</p>
+    <p>Descrição breve aqui.</p>
     <p>Preço: R$ 29,90</p>
-    <button onclick="adicionarCarrinho('Produto 2', 29.90)">Adicionar ao carrinho</button>
+    <button onclick="abrirModal('Produto 2', 'Descrição completa do Produto 2.', 'produto2.jpg', 29.90)">Ver mais</button>
   </div>
 
   <section>
@@ -200,20 +200,54 @@
     <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
   </footer>
 
-  <!-- Script mágico do carrinho -->
+  <!-- Modal -->
+  <div id="modal-produto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999; justify-content: center; align-items: center;">
+    <div style="background-color: #FDF6E3; color: #2F4F4F; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; text-align: center; position: relative;">
+      <img id="modal-img" src="" alt="Imagem do produto" style="max-width: 100%; border-radius: 10px; margin-bottom: 10px;">
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-desc"></p>
+      <div style="margin-top: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
+        <button onclick="comprarAgora()" style="background-color: #2F4F4F; color: #FDF6E3;">Comprar</button>
+        <button onclick="adicionarCarrinho(modalTitulo.innerText, modalPreco)" style="background-color: #2F4F4F; color: #FDF6E3;">Adicionar ao carrinho</button>
+      </div>
+      <button onclick="fecharModal()" style="margin-top: 20px; background: none; border: none; color: #2F4F4F; font-weight: bold; cursor: pointer;">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
     function adicionarCarrinho(nome, preco) {
       let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-
       const index = carrinho.findIndex(item => item.nome === nome);
       if (index > -1) {
         carrinho[index].quantidade += 1;
       } else {
         carrinho.push({ nome, preco, quantidade: 1 });
       }
-
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
       alert(`${nome} foi adicionado ao carrinho!`);
+    }
+
+    let modalPreco = 0;
+    const modal = document.getElementById("modal-produto");
+    const modalTitulo = document.getElementById("modal-titulo");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalImg = document.getElementById("modal-img");
+
+    function abrirModal(nome, desc, imagem, preco) {
+      modalTitulo.innerText = nome;
+      modalDesc.innerText = desc;
+      modalImg.src = imagem;
+      modalPreco = preco;
+      modal.style.display = "flex";
+    }
+
+    function fecharModal() {
+      modal.style.display = "none";
+    }
+
+    function comprarAgora() {
+      alert("Função de compra em breve, mas obrigado por tentar!");
     }
   </script>
 
