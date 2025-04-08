@@ -21,7 +21,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: relative;
+      flex-wrap: wrap;
     }
 
     .logo img {
@@ -30,11 +30,10 @@
     }
 
     .titulo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      margin: 0;
+      flex: 1;
+      text-align: center;
       font-size: 1.8em;
+      margin: 0;
     }
 
     .menu {
@@ -80,13 +79,10 @@
     }
 
     .carrinho-icon {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 10;
+      margin-left: 15px;
     }
 
     .carrinho-icon img {
@@ -94,19 +90,43 @@
       height: 30px;
       filter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(240%) hue-rotate(32deg) brightness(95%) contrast(90%);
     }
+
+    .topo-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header.topo {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .topo-left, .menu {
+        justify-content: center;
+      }
+
+      .menu {
+        margin-top: 10px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
-    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
-  </a>
-
   <header class="topo">
-    <div class="logo">
-      <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" />
+    <div class="topo-left">
+      <div class="logo">
+        <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" />
+      </div>
+      <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
+      </a>
     </div>
+
     <h1 class="titulo">C.A. Shopp</h1>
+
     <nav class="menu">
       <a href="#">Produtos</a>
       <a href="cadastro.html">Cadastro</a>
