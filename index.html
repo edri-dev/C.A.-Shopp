@@ -24,7 +24,7 @@
     .logo {
       position: absolute;
       top: 10px;
-      right: 20px;
+      left: 20px;
     }
 
     .logo img {
@@ -35,7 +35,7 @@
     .carrinho-icon {
       position: absolute;
       top: 10px;
-      left: 20px;
+      right: 20px;
       background: none;
       border: none;
       cursor: pointer;
@@ -127,14 +127,12 @@
         margin: 5px;
       }
 
-      .logo img {
-        width: 50px;
-        height: 50px;
+      .logo {
+        order: 1;
       }
 
-      .carrinho-icon img {
-        width: 30px;
-        height: 30px;
+      .carrinho-icon {
+        order: 2;
       }
 
       .titulo {
@@ -154,12 +152,12 @@
 <body>
 
   <header class="topo">
-    <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
-      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
-    </a>
     <div class="logo">
       <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" />
     </div>
+    <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
+      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
+    </a>
     <h1 class="titulo">C.A. Shopp</h1>
     <nav class="menu">
       <a href="#">Produtos</a>
