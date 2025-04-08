@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,164 +6,98 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fdfaf5;
-      color: #3a4d3e;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f1f1a; /* fundo escuro verde-musgo profundo */
+      color: #f1f1f1; /* letras claras */
     }
-
     header {
-      background-color: #3a4d3e;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background-color: #1e2e28;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
-
-    nav {
-      background-color: #5a715e;
-      padding: 10px;
-      text-align: center;
-    }
-
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #d9f99d;
+      margin-left: 1.5rem;
       text-decoration: none;
       font-weight: bold;
+      transition: 0.3s;
     }
-
-    section {
-      padding: 40px;
-      text-align: center;
+    nav a:hover {
+      color: #facc15;
     }
-
-    footer {
-      background-color: #3a4d3e;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    h1 {
+      font-size: 2.5rem;
+      color: #d9f99d;
+      margin: 2rem 1rem 0.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 1px;
     }
-
-    /* Estilo dos cards */
-    .card-container {
+    p {
+      font-size: 1.2rem;
+      margin: 1rem;
+      max-width: 600px;
+    }
+    .produtos {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
+      gap: 1rem;
+      padding: 1rem;
     }
-
-    .card {
-      width: 250px;
-      background-color: white;
+    .produto {
+      background-color: #1a2a24;
+      border: 2px solid #d9f99d;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.2s;
+      padding: 1rem;
+      width: 250px;
+      transition: transform 0.2s ease-in-out;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
+    .produto:hover {
+      transform: scale(1.05);
+      border-color: #facc15;
     }
-
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content h3 {
-      margin: 0;
-      color: #3a4d3e;
-    }
-
-    .card-content p {
-      font-size: 14px;
-      color: #777;
-    }
-
-    .preco {
-      color: #3a4d3e;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .btn-comprar {
-      background-color: #3a4d3e;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .btn-comprar:hover {
-      background-color: #2e3d31;
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #1e2e28;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>C.A. Shopp</h1>
-    <p>Estilo, atitude e identidade</p>
-  </header>
-
-  <nav>
-    <a href="#produtos">Produtos</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
-  <section id="produtos">
-    <h2>Produtos em Destaque</h2>
-    <div class="card-container">
-
-      <!-- Produto 1 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/250x200.png?text=Camiseta+Oversized" alt="Camiseta Oversized">
-        <div class="card-content">
-          <h3>Camiseta Oversized</h3>
-          <p>Estilo urbano e conforto garantido.</p>
-          <p class="preco">R$ 79,90</p>
-          <button class="btn-comprar">Comprar</button>
-        </div>
+    <h2>C.A. Shopp</h2>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#cadastro">Cadastro</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>  <main>
+    <h1>Nada normal, tudo necessário.</h1>
+    <section class="produtos" id="produtos">
+      <div class="produto">
+        <h3>Produto 1</h3>
+        <p>Descrição do produto aqui.</p>
       </div>
-
-      <!-- Produto 2 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/250x200.png?text=Boné+Streetwear" alt="Boné Streetwear">
-        <div class="card-content">
-          <h3>Boné Streetwear</h3>
-          <p>Ideal pra completar o look.</p>
-          <p class="preco">R$ 49,90</p>
-          <button class="btn-comprar">Comprar</button>
-        </div>
+      <div class="produto">
+        <h3>Produto 2</h3>
+        <p>Descrição do produto aqui.</p>
       </div>
+      <!-- Mais produtos futuramente -->
+    </section><section id="cadastro">
+  <h2 style="margin: 2rem 1rem 1rem">Cadastre-se</h2>
+  <p style="margin: 0 1rem 2rem">Em breve teremos novidades exclusivas para você.</p>
+</section>
 
-      <!-- Produto 3 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/250x200.png?text=Tênis+Casual" alt="Tênis Casual">
-        <div class="card-content">
-          <h3>Tênis Casual</h3>
-          <p>Design limpo e sola macia.</p>
-          <p class="preco">R$ 149,90</p>
-          <button class="btn-comprar">Comprar</button>
-        </div>
-      </div>
+<section id="contato">
+  <h2 style="margin: 2rem 1rem 1rem">Contato</h2>
+  <p style="margin: 0 1rem 2rem">Redes sociais e outros meios virão aqui.</p>
+</section>
 
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Fale com a gente</h2>
-    <p>Email: contato@cashopp.com</p>
-    <p>WhatsApp: (00) 00000-0000</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 C.A. Shopp. Todos os direitos reservados.</p>
+  </main>  <footer>
+    <p>&copy; 2025 C.A. Shopp. Nada normal, tudo necessário.</p>
   </footer>
 </body>
 </html>
