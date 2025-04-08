@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>C.A. Shopp</title>
   <style>
     body {
@@ -14,35 +14,35 @@
       text-align: center;
     }
 
-    header {
+    header.topo {
       background-color: #2F4F4F;
       color: #FDF6E3;
-      padding: 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
+      position: relative;
     }
 
     .logo img {
-      width: 40px;
-      height: 40px;
-      margin-right: 10px;
+      width: 50px;
+      height: 50px;
     }
 
-    nav {
-      margin-top: 10px;
-      width: 100%;
-      text-align: center;
+    .titulo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      font-size: 1.8em;
     }
 
-    nav a {
-      margin: 0 15px;
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
       color: #FDF6E3;
       text-decoration: none;
       font-weight: bold;
@@ -99,21 +99,23 @@
 <body>
 
   <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
-    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
   </a>
 
-  <header style="display: flex; align-items: center; padding: 10px; gap: 10px;">
-  <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" style="height: 50px;">
-  <h1 style="margin: 0;">C.A. Shopp</h1>
-  <nav style="margin-left: auto;">
-    <a href="#">Produtos</a>
-    <a href="cadastro.html">Cadastro</a>
-    <a href="#">Contato</a>
-  </nav>
-</header>
+  <header class="topo">
+    <div class="logo">
+      <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" />
+    </div>
+    <h1 class="titulo">C.A. Shopp</h1>
+    <nav class="menu">
+      <a href="#">Produtos</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
 
   <div class="slogan">
-    <p>Nada normal,<br>tudo necessário.</p>
+    <p>Nada normal,<br />tudo necessário.</p>
   </div>
 
   <div class="produto">
