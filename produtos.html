@@ -1,157 +1,61 @@
-<!DOCTYPE html><html lang="pt-br"><head>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja</title>
+  <title>C.A. Shopp</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Baskervville', serif;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f6ef;
+      color: #333;
+    }
 
-body {
-  background-color: #f8f4f0;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    header {
+      background-color: #556b2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
+    h1 {
+      margin: 0;
+    }
 
-.card {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
+    main {
+      padding: 20px;
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+    footer {
+      background-color: #556b2f;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
 
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 1rem 0 0.5rem;
-  color: #4b3621;
-}
-
-.card p {
-  color: #6e5840;
-}
-
-.buttons {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.buttons button,
-.buttons a {
-  padding: 0.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #cba46c;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-.buttons button:hover,
-.buttons a:hover {
-  background-color: #b38b58;
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.modal-content {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 600px;
-  width: 90%;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-}
-
-.modal-content h2 {
-  color: #4b3621;
-  margin-bottom: 1rem;
-}
-
-.modal-content p {
-  color: #6e5840;
-}
-
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
   </style>
-</head><body>
-  <div class="cards-container">
-    <div class="card">
-      <img src="https://via.placeholder.com/250x200" alt="Produto 1">
-      <h3>Produto 1</h3>
-      <p>R$ 99,99</p>
-      <div class="buttons">
-        <a href="finalizar-compra.html">Comprar</a>
-        <a href="carrinho.html">Adicionar ao Carrinho</a>
-        <button onclick="abrirModal('Produto 1', 'Descrição completa do produto 1 aqui...')">Ver mais</button>
-      </div>
-    </div>
-    <!-- Repita os cards conforme necessário -->
-  </div>  <!-- Modal -->  <div id="modal" class="modal">
-    <div class="modal-content">
-      <button class="close-modal" onclick="fecharModal()">&times;</button>
-      <h2 id="modalTitle"></h2>
-      <p id="modalDescription"></p>
-    </div>
-  </div>  <script>
-    function abrirModal(titulo, descricao) {
-      document.getElementById('modalTitle').textContent = titulo;
-      document.getElementById('modalDescription').textContent = descricao;
-      document.getElementById('modal').style.display = 'flex';
-    }
+</head>
+<body>
+  <header>
+    <h1>C.A. Shopp</h1>
+  </header>
 
-    function fecharModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script></body></html>
+  <main>
+    <div class="content">
+      <p>Bem-vindo à C.A. Shopp! Em breve, muitas novidades por aqui.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 C.A. Shopp. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
