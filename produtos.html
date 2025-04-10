@@ -2,167 +2,264 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C.A. Shopp</title>
   <style>
     body {
-      font-family: "Baskerville Old Face", serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
-    }
-
-    header {
-      background-color: #2f2f2f;
-      color: white;
-      padding: 20px;
+      background-color: #FDF6E3;
+      color: #2F4F4F;
+      font-family: 'Baskerville Old Face', 'Georgia', serif;
       text-align: center;
     }
 
-    .produtos {
+    header.topo {
+      background-color: #2F4F4F;
+      color: #FDF6E3;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .carrinho-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .carrinho-icon img {
+      width: 30px;
+      height: 30px;
+      filter: brightness(0) saturate(100%) invert(94%) sepia(5%) saturate(240%) hue-rotate(32deg) brightness(95%) contrast(90%);
+    }
+
+    .titulo {
+      font-size: 2em;
+      margin: 0;
+      padding-top: 20px;
+    }
+
+    nav.menu {
+      margin-top: 10px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      color: #FDF6E3;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .slogan {
+      font-size: 1.5em;
+      margin: 30px 20px;
     }
 
     .produto {
-      background-color: #ffffff;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      margin: 10px;
+      border: 2px solid #2F4F4F;
+      border-radius: 10px;
       padding: 20px;
-      width: 250px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 400px;
+      background-color: #fff;
+      transition: 0.3s;
     }
 
-    .produto button {
-      background-color: #444;
-      color: white;
+    .produto:hover {
+      background-color: #f0f0eb;
+    }
+
+    section {
+      margin: 40px 20px;
+    }
+
+    button {
+      background-color: #2F4F4F;
+      color: #FDF6E3;
       border: none;
       padding: 10px 20px;
-      margin-top: 10px;
-      cursor: pointer;
       border-radius: 5px;
-    }
-
-    .produto button:hover {
-      background-color: #222;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.6);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      position: relative;
-      font-family: "Baskerville Old Face", serif;
-    }
-
-    .fechar {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 20px;
       cursor: pointer;
+      font-size: 1em;
     }
 
-    .modal-content img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      margin-bottom: 15px;
+    button:hover {
+      background-color: #3f5f5f;
+    }
+
+    footer {
+      background-color: #2F4F4F;
+      color: #FDF6E3;
+      padding: 10px;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      header.topo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+      }
+
+      .logo, .carrinho-icon {
+        position: static;
+        display: inline-block;
+        margin: 5px;
+      }
+
+      .logo {
+        order: 1;
+      }
+
+      .carrinho-icon {
+        order: 2;
+      }
+
+      .titulo {
+        margin: 10px 0 0 0;
+        padding: 0;
+        font-size: 2em;
+      }
+
+      nav.menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Produtos</h1>
-    <a href="carrinho.html" style="color: white; text-decoration: none;">Ver Carrinho</a>
+  <header class="topo">
+    <div class="logo">
+      <img src="logo-ca-shopp.png" alt="Logo C.A. Shopp" />
+    </div>
+    <a href="carrinho.html" class="carrinho-icon" title="Ver carrinho">
+      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho de compras" />
+    </a>
+    <h1 class="titulo">C.A. Shopp</h1>
   </header>
 
-  <div class="produtos">
+  <div class="slogan">
+    <p>Nada normal,<br />tudo necessário.</p>
+  </div>
+
   <div class="produto">
     <h2>Produto 1</h2>
-    <p>Descrição curta do Produto 1</p>
-    <p>R$ 29,90</p>
-    <button onclick="abrirModal('Produto 1', 'Descrição detalhada do Produto 1.', 'produto1.jpg', 29.90)">Ver mais</button>
+    <p>Descrição breve aqui.</p>
+    <p>Preço: R$ 19,90</p>
+    <button onclick="abrirModal('Produto 1', 'Descrição completa do Produto 1.', 'produto1.jpg', 19.90)">Ver mais</button>
   </div>
-  
+
   <div class="produto">
     <h2>Produto 2</h2>
-    <p>Descrição curta do Produto 2</p>
-    <p>R$ 34,90</p>
-    <button onclick="abrirModal('Produto 2', 'Descrição detalhada do Produto 2.', 'produto2.jpg', 34.90)">Ver mais</button>
+    <p>Descrição breve aqui.</p>
+    <p>Preço: R$ 29,90</p>
+    <button onclick="abrirModal('Produto 2', 'Descrição completa do Produto 2.', 'produto2.jpg', 29.90)">Ver mais</button>
   </div>
 
   <div class="produto">
     <h2>Produto 3</h2>
-    <p>Descrição curta do Produto 3</p>
-    <p>R$ 39,90</p>
-    <button onclick="abrirModal('Produto 3', 'Descrição detalhada do Produto 3.', 'produto3.jpg', 39.90)">Ver mais</button>
+    <p>Descrição breve aqui.</p>
+    <p>Preço: R$ 49,90</p>
+    <button onclick="abrirModal('Produto 3', 'Descrição completa do Produto 3.', 'produto2.jpg', 39.90)">Ver mais</button>
   </div>
-
+    
   <div class="produto">
     <h2>Produto 4</h2>
-    <p>Descrição curta do Produto 4</p>
-    <p>R$ 44,90</p>
-    <button onclick="abrirModal('Produto 4', 'Descrição detalhada do Produto 4.', 'produto4.jpg', 44.90)">Ver mais</button>
+    <p>Descrição breve aqui.</p>
+    <p>Preço: R$ 59,90</p>
+    <button onclick="abrirModal('Produto 4', 'Descrição completa do Produto 4.', 'produto2.jpg', 59.90)">Ver mais</button>
   </div>
-</div>
+    
+  <section>
+    <a href="cadastro.html">
+      <button>Cadastrar</button>
+    </a>
+    <p>Em breve teremos novidades para você.</p>
+  </section>
 
-    <!-- Adicione mais produtos conforme necessário -->
-  </div>
+  <section>
+    <h2>Contato</h2>
+    <p>Redes sociais e outros meios virão aqui.</p>
+  </section>
 
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="fechar" onclick="fecharModal()">&times;</span>
-      <img id="modalImagem" src="" alt="">
-      <h2 id="modalTitulo"></h2>
-      <p id="modalDescricao"></p>
-      <p id="modalPreco"></p>
-      <button onclick="adicionarAoCarrinho()">Adicionar ao carrinho</button>
+  <footer>
+    <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal-produto" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 999; justify-content: center; align-items: center;">
+    <div style="background-color: #FDF6E3; color: #2F4F4F; padding: 20px; border-radius: 10px; width: 90%; max-width: 500px; text-align: center; position: relative; max-height: 90vh; overflow-y: auto;">
+      <img id="modal-img" src="" alt="Imagem do produto" style="max-width: 100%; border-radius: 10px; margin-bottom: 10px;">
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-desc"></p>
+<p id="modal-preco" style="font-weight: bold;">R$ 0,00</p>
+      <div style="margin-top: 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 10px;">
+        <button onclick="comprarAgora()">Comprar</button>
+        <button onclick="adicionarCarrinho(modalTitulo.innerText, modalPreco)">Adicionar ao carrinho</button>
+      </div>
+      <button onclick="fecharModal()" style="margin-top: 20px; background: none; border: none; color: #2F4F4F; font-weight: bold; cursor: pointer;">Fechar</button>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
-    let produtoAtual = {};
-
-    function abrirModal(titulo, descricao, imagem, preco) {
-      produtoAtual = { titulo, descricao, imagem, preco };
-
-      document.getElementById('modalTitulo').innerText = titulo;
-      document.getElementById('modalDescricao').innerText = descricao;
-      document.getElementById('modalImagem').src = imagem;
-      document.getElementById('modalPreco').innerText = 'Preço: R$ ' + preco.toFixed(2);
-      document.getElementById('modal').style.display = 'flex';
+const modalPrecoElemento = document.getElementById("modal-preco");
+    function adicionarCarrinho(nome, preco) {
+      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+      const index = carrinho.findIndex(item => item.nome === nome);
+      if (index > -1) {
+        carrinho[index].quantidade += 1;
+      } else {
+        carrinho.push({ nome, preco, quantidade: 1 });
+      }
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+      alert(`${nome} foi adicionado ao carrinho!`);
     }
+
+    let modalPreco = 0;
+    const modal = document.getElementById("modal-produto");
+    const modalTitulo = document.getElementById("modal-titulo");
+    const modalDesc = document.getElementById("modal-desc");
+    const modalImg = document.getElementById("modal-img");
+
+    function abrirModal(nome, desc, imagem, preco) {
+  modalTitulo.innerText = nome;
+  modalDesc.innerText = desc;
+  modalImg.src = imagem;
+  modalPreco = preco;
+  modalPrecoElemento.innerText = `R$ ${preco.toFixed(2).replace(".", ",")}`;
+  modal.style.display = "flex";
+}
 
     function fecharModal() {
-      document.getElementById('modal').style.display = 'none';
+      modal.style.display = "none";
     }
 
-    function adicionarAoCarrinho() {
-      let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-      carrinho.push(produtoAtual);
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-      fecharModal();
-      alert('Produto adicionado ao carrinho!');
+    function comprarAgora() {
+      alert("Função de compra em breve, mas obrigado por tentar!");
     }
   </script>
 
