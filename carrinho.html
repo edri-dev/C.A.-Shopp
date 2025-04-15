@@ -83,6 +83,22 @@
 
   <div id="acoes" style="margin-bottom: 40px;"></div>
 
+  <!-- Modal de compra -->
+  <div id="modal-compra" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+    <div style="background-color:#fff; padding:20px; border-radius:10px; width:90%; max-width:400px;">
+      <h2>Finalizar Compra</h2>
+      <p>Preencha seus dados:</p>
+      <label for="endereco">Endereço:</label><br>
+      <textarea id="endereco" rows="3" style="width:100%;"></textarea><br><br>
+
+      <label for="pix">Chave PIX usada:</label><br>
+      <input type="text" id="pix" style="width:100%;" /><br><br>
+
+      <button onclick="enviarPedido()">Enviar Pedido</button>
+      <button onclick="fecharModal()" style="margin-left:10px;">Cancelar</button>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2025 C.A. Shopp – Nada normal, tudo necessário.</p>
   </footer>
@@ -92,7 +108,6 @@
     const container = document.getElementById('carrinho-container');
     const totalEl = document.getElementById('total');
     const acoes = document.getElementById('acoes');
-
     let total = 0;
 
     if (carrinho.length === 0) {
@@ -122,8 +137,37 @@
     }
 
     function finalizarCompra() {
-      alert("Função de compra ainda não disponível, mas sua loja já tá quase pronta!");
-      // Aqui futuramente entra o sistema de pagamento com Pix
+      document.getElementById('modal-compra').style.display = 'flex';
+    }
+
+    function fecharModal() {
+      document.getElementById('modal-compra').style.display = 'none';
+    }
+
+    function enviarPedido() {
+      const endereco = document.getElementById('endereco').value.trim();
+      const pix = document.getElementById('pix').value.trim();
+
+      if (!endereco || !pix) {
+        alert("Preencha todos os campos!");
+        return;
+      }
+
+      let corpoEmail = `Produtos:\n\n`;
+      carrinho.forEach(item => {
+        corpoEmail += `- ${item.nome} (x${item.quantidade}) - R$ ${item.preco.toFixed(2)}\n`;
+      });
+      corpoEmail += `\nTotal: R$ ${total.toFixed(2)}\n`;
+      corpoEmail += `\nEndereço: ${endereco}\nChave PIX usada: ${pix}`;
+
+      const email = "SEUEMAILAQUI@dominio.com"; // <-- Troca por teu e-mail de pedidos
+      const assunto = encodeURIComponent("Novo pedido - C.A. Shopp");
+      const corpo = encodeURIComponent(corpoEmail);
+      const mailtoLink = `mailto:${email}?subject=${assunto}&body=${corpo}`;
+
+      window.location.href = mailtoLink;
+      fecharModal();
+      localStorage.removeItem('carrinho');
     }
   </script>
 
